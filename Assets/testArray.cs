@@ -10,7 +10,7 @@ public class testArray : MonoBehaviour
 	public TextMesh thisText;
 	public float alpha;
 	public Color d;
-	public bool isTransparent;
+	public bool isTransparent = false;
 	public float current;
 
 
@@ -22,6 +22,8 @@ public class testArray : MonoBehaviour
 	}
 
 	//IEnumerator TextFadeOut()
+
+
 
 	IEnumerator TextFade (bool choice)
 	{
@@ -54,12 +56,13 @@ public class testArray : MonoBehaviour
 
 	}
 
+
 	IEnumerator TextFade (float startAlpha, float targetAlpha)
-		{
-		Debug.Log("union buster!");
-		for (float time = 0; time <= 1; time += Time.deltaTime){
+	{
+		Debug.Log ("union buster!");
+		for (float time = 0; time <= 1; time += Time.deltaTime) {
 			//alpha = Lerpy (startAlpha, targetAlpha, time);
-			alpha = Mathf.SmoothStep(startAlpha, targetAlpha, time); 
+			alpha = Mathf.SmoothStep (startAlpha, targetAlpha, time); 
 			d.a = alpha;
 			yield return null;
 		}
@@ -80,19 +83,38 @@ public class testArray : MonoBehaviour
 	void Update ()
 	{
 
+		if (alpha == 1.0f) {
+			isTransparent = false;
+		}
+		if (alpha == 0.0f) {
+		
+			isTransparent = true;
+		}
+
 		if (Input.GetKeyDown ("q")) {
 			Debug.Log ("genuwine");
 			Debug.Log (marcus [2]);
 			thisText.text = (marcus [1]);
 		}
 
+
 		if (Input.GetKeyDown ("w")) {	
 			StartCoroutine (TextFade (isTransparent));
 		}
-		if (Input.GetKeyDown ("i")) {	
-			StartCoroutine (TextFade (1, 0));
-		}
 
+
+
+		if (Input.GetKeyDown ("i")) {
+			if (isTransparent == false) {	
+				StartCoroutine (TextFade (1, 0));
+			
+
+			} else if (isTransparent == true) {
+				StartCoroutine (TextFade (0, 1));
+
+			}
+	
+		}
 
 		if (Input.GetKeyDown ("1")) {
 			Debug.Log ("yo");

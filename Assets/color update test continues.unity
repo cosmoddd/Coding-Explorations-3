@@ -100,7 +100,7 @@ GameObject:
   - 102: {fileID: 705637365}
   - 114: {fileID: 705637364}
   m_Layer: 0
-  m_Name: text 2
+  m_Name: da fuck?>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   - yooby
   - holla
   thisText: {fileID: 705637365}
-  alpha: 0
+  alpha: 1
   d: {r: 1, g: 0, b: 0, a: 1}
   isTransparent: 0
   current: 0
@@ -216,7 +216,7 @@ GameObject:
   - 102: {fileID: 1071080706}
   - 114: {fileID: 1071080709}
   m_Layer: 0
-  m_Name: text
+  m_Name: ehllow world
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   - yooby
   - holla
   thisText: {fileID: 1071080706}
-  alpha: 0
+  alpha: 1
   d: {r: 1, g: 0, b: 0, a: 1}
   isTransparent: 0
   current: 0
