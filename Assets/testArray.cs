@@ -5,6 +5,29 @@ using UnityEngine.UI;
 public class testArray : MonoBehaviour
 {
 
+    //public GameObject thing;
+
+    public float A;
+
+    public float b;
+
+    public float B
+    {
+        get
+        {
+            return b;
+        }
+        set
+        {
+            b = value;
+            A = value;
+        }
+    }
+
+
+    [Range(0.0f, 10.0f)]
+    public float mySliderFloat;
+
 
     public string[] marcus = { "nasty", "yooby", "holla" };
     public TextMesh thisText;
@@ -12,13 +35,14 @@ public class testArray : MonoBehaviour
     public Color d;
     public bool isTransparent = false;
     public float current;
-
+    public bool max = true;
+    public float newAlphaValue = 1;
 
     // Use this for initialization
 
     void Start()
     {
-
+        B = 23;
     }
 
     //IEnumerator TextFadeOut()
@@ -60,9 +84,9 @@ public class testArray : MonoBehaviour
 
     }
 
-
     IEnumerator TextFade(float startAlpha, float targetAlpha)
     {
+
         Debug.Log("union buster!");
         for (float time = 0; time <= 1; time += Time.deltaTime)
         {
@@ -83,10 +107,15 @@ public class testArray : MonoBehaviour
     }
 
 
-
     // Update is called once per frame
     void Update()
+
+    
+
     {
+       
+        
+       b = mySliderFloat;
 
         if (alpha == 1.0f)
         {
@@ -124,22 +153,39 @@ public class testArray : MonoBehaviour
                 StartCoroutine(TextFade(0, 1));
 
             }
+        }
 
-            if (Input.GetKeyDown("d"))
-            {
-                
-                Debug.Log("wut");
-            }
+        if (Input.GetKeyDown("1"))
+        {
+            Debug.Log("yo");
+            isTransparent = !isTransparent;
+        }
 
+        d.a = newAlphaValue;
 
-            if (Input.GetKeyDown("1"))
-            {
-                Debug.Log("yo");
-                isTransparent = !isTransparent;
-            }
+     //   updateAlpha();
 
-            thisText.color = d;
+       //thisText.color = d;
 
 
+        if (Input.GetKeyDown("d"))
+        {
+            Debug.Log("yo, d");
+            max = !max;
         }
     }
+
+
+    
+        void updateAlpha()
+        {
+                if (max)
+                {
+                    newAlphaValue = Mathf.Lerp(newAlphaValue, 1, Time.deltaTime*3);
+                }
+                if (!max)
+                {
+                    newAlphaValue = Mathf.Lerp(newAlphaValue, 0, Time.deltaTime*3);
+                }
+    }
+}
