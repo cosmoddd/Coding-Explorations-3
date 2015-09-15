@@ -83,6 +83,12 @@ public class testArray : MonoBehaviour
 	void Update ()
 	{
 
+
+		if (Input.GetKeyDown ("d")) {
+
+
+
+
 		if (alpha == 1.0f) {
 			isTransparent = false;
 		}
@@ -105,7 +111,7 @@ public class testArray : MonoBehaviour
 
 
 		if (Input.GetKeyDown ("i")) {
-			if (isTransparent == false) {	
+			if (isTransparent == false ) {	
 				StartCoroutine (TextFade (1, 0));
 			
 
