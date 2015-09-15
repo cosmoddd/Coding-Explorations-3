@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ColorUpdate.cs" />
+     <Compile Include="Assets\MessWithU.cs" />
+     <Compile Include="Assets\controlToggleAlpha.cs" />
      <Compile Include="Assets\testArray.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Volumes/Blue Boar/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
