@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -100,7 +98,7 @@ GameObject:
   - 102: {fileID: 705637365}
   - 114: {fileID: 705637364}
   m_Layer: 0
-  m_Name: da fuck?>
+  m_Name: da fuck?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,18 +112,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 705637363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bbb7e77e20b64b9fa0caf20f6672cbe, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6ebcbf52507704bbd961e6ace42c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  marcus:
-  - nasty
-  - yooby
-  - holla
-  thisText: {fileID: 0}
-  alpha: 0
-  d: {r: 0, g: 0, b: 0, a: 0}
-  isTransparent: 0
-  current: 0
+  messin: 1.11000001
 --- !u!102 &705637365
 TextMesh:
   serializedVersion: 3
@@ -158,15 +148,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8c9f98469e24ff9be3c5f26bc7ccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  A: .200000003
+  b: 0
+  mySliderFloat: .540000021
   marcus:
   - nasty
   - yooby
   - holla
   thisText: {fileID: 705637365}
-  alpha: 1
+  alpha: 1.04999995
   d: {r: 1, g: 0, b: 0, a: 1}
   isTransparent: 0
-  current: 0
+  current: .720000029
+  max: 1
+  newAlphaValue: 1
 --- !u!23 &705637367
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -233,15 +228,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8c9f98469e24ff9be3c5f26bc7ccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  A: 0
+  b: 0
+  mySliderFloat: 0
   marcus:
   - nasty
   - yooby
   - holla
-  thisText: {fileID: 1071080706}
+  thisText: {fileID: 0}
   alpha: 1
   d: {r: 1, g: 0, b: 0, a: 1}
   isTransparent: 0
   current: 0
+  max: 0
+  newAlphaValue: 1
 --- !u!102 &1071080706
 TextMesh:
   serializedVersion: 3
@@ -307,18 +307,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071080704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bbb7e77e20b64b9fa0caf20f6672cbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe1b85ffe1e051439c31f1536b5ec7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  A: 0
+  b: 0
+  mySliderFloat: 0
   marcus:
   - nasty
   - yooby
   - holla
-  thisText: {fileID: 0}
+  thisText: {fileID: 1071080706}
   alpha: 0
   d: {r: 0, g: 0, b: 0, a: 0}
   isTransparent: 0
   current: 0
+  max: 1
+  newAlphaValue: 1
 --- !u!1 &1167530314
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +392,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
