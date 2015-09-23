@@ -6,19 +6,20 @@ public class LoopControl : MonoBehaviour
 
 
     public AudioClip[] clipList;
-    public AudioSource audioSource;
-    public int loopAmount;
-    public int currentPlayCount;
-    public float loopDuration;
-    public float currentPosition;
+    public AudioSource[] audioSource;
+    public int[] loopAmount;
+    public int[] currentPlayCount;
+    public float[] loopDuration;
+    public float[] currentPosition;
 
 
     // Use this for initialization
     void Start()
     {
+     
 
-        currentPlayCount = 0;
-        loopAmount = Random.Range(2, 4);
+        currentPlayCount[0] = 0;
+        loopAmount[0] = Random.Range(2, 4);
         //audioSource.clip = clipList[Random.Range(0, 8)];
 
         // PlayThroughClip();
@@ -27,73 +28,61 @@ public class LoopControl : MonoBehaviour
 
     }
 
-    IEnumerator LoopAudio(int startingLoopAmt)
+    IEnumerator LoopAudio1(int startingLoopAmt)
     {
         while (true)
         {
-            currentPlayCount = 0;
-            audioSource.clip = clipList[Random.Range(0, 8)];
-            loopDuration = audioSource.clip.length;
-            
-            for (int i = 0; i < loopAmount; i++)
+            currentPlayCount[0] = 0;
+            audioSource[0].clip = clipList[Random.Range(0, 8)];
+            loopDuration[0] = audioSource[0].clip.length;
+
+			
+			for (int i = 0; i < loopAmount[0]; i++)
             {
-                audioSource.Play();
-                currentPlayCount++;
-                yield return new WaitForSeconds(audioSource.clip.length);
+                audioSource[0].Play();
+                currentPlayCount[0]++;
+                yield return new WaitForSeconds(audioSource[0].clip.length);
             }
-            loopAmount = Random.Range(2, 4);
-            Debug.Log("End of Loop Sequence");
+            loopAmount[0] = Random.Range(2, 4);
+            Debug.Log("End of Loop 1 Sequence");
         }
     }
+
+	IEnumerator LoopAudio2(int startingLoopAmt)
+	{
+		while (true)
+		{
+			currentPlayCount[1] = 0;
+			audioSource[1].clip = clipList[Random.Range(0,8)];
+			loopDuration[1] = audioSource[1].clip.length;
+			
+			
+			for (int i = 0; i < loopAmount[1]; i++)
+			{
+				audioSource[1].Play();
+				currentPlayCount[1]++;
+				yield return new WaitForSeconds(audioSource[0].clip.length);
+			}
+			loopAmount[1] = Random.Range(2, 4);
+			Debug.Log("End of Loop 2 Sequence");
+		}
+	}
 
     void OnMouseDown()
     {
         StopCoroutine("LoopAudio");
-      //  currentPlayCount = 0;
-        //audioSource.clip = clipList[Random.Range(0, 8)];
-        //loopDuration = audioSource.clip.length;
-        StartCoroutine(LoopAudio(loopAmount));
 
-        //PlayThroughClip();
+        StartCoroutine(LoopAudio1(loopAmount[0]));
     }
 
     void Update()
     {
 
-
-       currentPosition = audioSource.time;
-        
-
-        //PlayThroughClip();
-
-        //Debug.Log(audioSource.time);
-        //if (!audioSource.isPlaying)
-        //{
-        //    PlayThroughClip();
-        //}
+       currentPosition[0] = audioSource[0].time;
+		currentPosition [1] = audioSource [1].time;
 
     }
 
-    //void PlayThroughClip()
-    //{
-
-    //      if (currentPosition >= (loopDuration-.02))
-    //        {
-    //            Debug.Log("you have reached the end of the playback file");
-    //        }
-
-    //for (currentPlayCount = 0; currentPlayCount < loopTimes; currentPlayCount++)
-    //{
-
-    //    //audioSource.PlayOneShot(audioSource.clip);
-
-    //    Debug.Log("one time playing");
-
-    //    if (currentPosition == loopDuration)
-    //    {
-    //        Debug.Log("you have reached the end of the playback file");
-    //    }
-    //}
 }
 
 

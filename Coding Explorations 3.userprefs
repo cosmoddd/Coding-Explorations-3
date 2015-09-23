@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/testArray.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/LoopControl.cs">
     <Files>
-      <File FileName="Assets/testArray.cs" Line="10" Column="1" />
-      <File FileName="Assets/ColorUpdate.cs" Line="1" Column="1" />
-      <File FileName="Assets/MessWithU.cs" Line="4" Column="39" />
+      <File FileName="Assets/scripts/musicVolumeControl.cs" Line="29" Column="29" />
+      <File FileName="Assets/scripts/LoopControl.cs" Line="82" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

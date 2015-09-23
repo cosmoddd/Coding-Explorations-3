@@ -3,12 +3,12 @@ using System.Collections;
 
 public class musicVolumeControl : MonoBehaviour {
 
-    public AudioSource audioSource;
+    public AudioSource[] audioSource;
     public LoopControl loopControl;
     public float currentVolume;
     public float target;
-    public int testLoopCount;
-    public float testLoopDuration;
+    public int[] testLoopCount;
+    public float[] testLoopDuration;
 
 
     // Use this for initialization
@@ -21,15 +21,15 @@ public class musicVolumeControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        testLoopDuration = loopControl.loopDuration;
+	   //     testLoopDuration[0] = loopControl.loopDuration[0];
 
         updateVolume();
 
-        testLoopCount = loopControl.currentPlayCount;
-        if (testLoopCount == 1){
+        testLoopCount[0] = loopControl.currentPlayCount[0];
+        if (testLoopCount[0] == 1){
             target = 1;
         }
-        if (testLoopCount == loopControl.loopAmount)
+        if (testLoopCount[0] == loopControl.loopAmount[0])
             {
             target = 0;
         }
@@ -37,8 +37,8 @@ public class musicVolumeControl : MonoBehaviour {
 
     void updateVolume()
     {
-        audioSource.volume = currentVolume;
-        currentVolume = Mathf.SmoothStep(currentVolume, target, (Time.deltaTime*loopControl.loopDuration));
+        audioSource[0].volume = currentVolume;
+        currentVolume = Mathf.SmoothStep(currentVolume, target, (Time.deltaTime*loopControl.loopDuration[0]));
     }
 
 }
